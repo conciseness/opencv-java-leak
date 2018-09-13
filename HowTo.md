@@ -1,4 +1,5 @@
-###Mystery Memory Leaks and JNI###
+**Mystery Memory Leaks and JNI**
+
 03 JAN 2018
 Java libraries that invoke native code (i.e. code written in C/C++ and compiled for a specific platform) via the Java Native Interface (JNI) can allocate memory that is nearly invisible to standard JVM monitoring tools. This creates the potential for very mysterious memory leaks because JNI does not automatically garbage collect or track the non-JVM memory resources allocated on the native side.
 
@@ -9,12 +10,14 @@ The example application uses OpenCV to convert a colored image to greyscale. The
 
 $ git clone https://github.com/jkutner/opencv-java-leak
 $ cd opencv-java-leak
+
 Then build the Docker image, which will compile OpenCV for Linux:
 
 $ docker-compose build
 Finally, run the program in a Docker container with this command:
 
 $ docker-compose run opencv
+
 As the app runs, it will periodically log it’s memory profile, which looks like this:
 
 measure.mem.jvm.heap.used=2M measure.mem.jvm.heap.committed=31M measure.mem.jvm.heap.max=58M
