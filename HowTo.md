@@ -1,4 +1,4 @@
-Mystery Memory Leaks and JNI
+###Mystery Memory Leaks and JNI###
 03 JAN 2018
 Java libraries that invoke native code (i.e. code written in C/C++ and compiled for a specific platform) via the Java Native Interface (JNI) can allocate memory that is nearly invisible to standard JVM monitoring tools. This creates the potential for very mysterious memory leaks because JNI does not automatically garbage collect or track the non-JVM memory resources allocated on the native side.
 
